@@ -15,9 +15,8 @@ router.get('/',async (req,res)=>{
 
 router.post('/',async (req,res)=>{
     try {
-        const data=new Data(req.body); 
-        await data.save()
-       res.send(data)
+            const posts=await Data.create(req.body)
+            res.send(posts);
     } catch (error) {
         res.send(error)
     }
