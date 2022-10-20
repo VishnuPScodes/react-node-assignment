@@ -1,14 +1,14 @@
 
 .main-2{
-    border: 1px solid blue;
-    height: 640px;
+  
     width: 900px;
     margin: auto;
     margin-top: 80px;
     display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .main>div{
-    border: 1px solid red;
+   
     width: 50%;
     height: 100%;
 }

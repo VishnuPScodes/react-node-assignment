@@ -23,7 +23,7 @@ export const Page3=(()=>{
 
        var jsonObj=JSON.stringify(object3);
        console.log('json',jsonObj) 
-       fetch('http://localhost:5005/data', {
+       fetch('https://backend-121-m.herokuapp.com/data', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
