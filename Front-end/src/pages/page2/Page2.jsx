@@ -14,13 +14,10 @@ export const Page2=(()=>{
     console.log(dataStored,typeof(dataStored))
     //function to take the input from the form and save it in redux
     const handleSubmit=(e)=>{
-    //    let dataIs=dataStored;
        const object3 = {...dataStored, ...data}
        e.preventDefault()
-      
-     
-     //  dataIs=[...dataIs,data]
-       dispatch(dataAddSuccess(object3))     
+       dispatch(dataAddSuccess(object3));
+       navigate('/Page3')   
     }
     const handleChange=((e)=>{
        const {id,value}=e.target;
@@ -30,7 +27,7 @@ export const Page2=(()=>{
     )
     })
     return <div>
-       
+       <h2>Page 2</h2>
         <form action="" onSubmit={handleSubmit}>
         <div className="main-2">
             <div className='left'>           

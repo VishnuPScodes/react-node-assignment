@@ -28,7 +28,7 @@ export const Page1=(()=>{
     )
     })
     return <div>
-       
+       <h2>Page 1</h2>
         <form action="" onSubmit={handleSubmit}>
         <div className="main">
             <div className='left'>
