@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { dataAddSuccess } from '../../redux/action';
 import './page3.css'
-
+import axios from 'axios'
 
 
 export const Page3=(()=>{
@@ -11,11 +11,27 @@ export const Page3=(()=>{
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const dataStored=useSelector((state)=>state.data)
-    console.log(dataStored,typeof(dataStored))
-    //function to take the input from the form and save it in redux
+   
+
+    //function to post the data to the mongodb data base using axios
     const handleSubmit=(e)=>{
        const object3 = {...dataStored, ...data}
        e.preventDefault();
+       console.log(object3);
+
+       //converting javascript object to json object before sending to mongoDb
+
+       var jsonObj=JSON.stringify(object3);
+       console.log('json',jsonObj) 
+       fetch('http://localhost:5005/data', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(object3)
+      }).then(res => res.json())
+        .then(res => console.log(res));
        dispatch(dataAddSuccess(object3));
     }
     const handleChange=((e)=>{
@@ -161,7 +177,7 @@ export const Page3=(()=>{
                     </div>
                   </section>  
                 </div>
-
+                <br />
                 <div className="name">
                   <label htmlFor="" className='name'>Do you have wholesale license</label><span class="req">*</span>
                   <section onChange={handleChange} id='HaveWholeSaleLicense'>
