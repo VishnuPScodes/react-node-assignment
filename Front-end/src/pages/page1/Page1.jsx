@@ -41,7 +41,7 @@ export const Page1=(()=>{
                 <br />
                 <div className='name'>  
                 <label className='name'>Mobile number:</label><span class="req">*</span> <br />
-                <input id='mobileNumber' onChange={handleChange} type="number" className='input-name' placeholder=''  />
+                <input id='MobileNumber' onChange={handleChange} type="number" className='input-name' placeholder=''  />
                 </div>
               
             </div>
