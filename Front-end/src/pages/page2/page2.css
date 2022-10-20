@@ -1,7 +1,7 @@
 
-.main{
+.main-2{
     border: 1px solid blue;
-    height: 340px;
+    height: 640px;
     width: 900px;
     margin: auto;
     margin-top: 80px;
@@ -27,9 +27,23 @@
 .req{
     color: red;
 }
-.submit-btn{
-    width: 800px;
+.submit{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+.submit-btn-2{
+    width: 400px;
     height: 35px;
     margin: auto;
-    margin-left: 180px;
+ 
+}
+.btn-back{
+    width: 400px;
+    height: 35px;
+    margin: auto;
+   
+}
+.right-2{
+    margin-left: 100px;
 }

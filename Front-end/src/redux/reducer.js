@@ -4,12 +4,12 @@ import { dataActions } from "./action"
 const initState={
     loading:false,
     error:false,
-    data:[]
+    data:''
 }
 
 
 export const dataReducer=(state=initState,action)=>{
-        switch(action.state){
+        switch(action.type){
             case dataActions.DATA_ADD_FAILURE :{
                 return {
                     ...state,
@@ -29,7 +29,7 @@ export const dataReducer=(state=initState,action)=>{
                     ...state,
                     loading:false,
                     error:false,
-                    data:[...data,action.payload]
+                    data:action.payload
                 }
             }
             default :
